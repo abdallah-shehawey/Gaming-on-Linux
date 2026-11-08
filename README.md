@@ -2,10 +2,9 @@
 
 **Play any Windows game on Linux, from your Steam library, with all your controllers.**
 
-[![Watch the setup video (7:46)](.github/video.jpg)](https://abdallah-shehawey.github.io/Gaming-on-Linux/)
+https://github.com/user-attachments/assets/43185ac5-bc72-4a81-85fd-e9485138b108
 
-🎬 **Setup video (7:46, in Egyptian Arabic):** click the picture above and it plays right away,
-or [download it](https://github.com/abdallah-shehawey/Gaming-on-Linux/raw/main/How%20to%20Play%20-%20Setup%20Guide.mp4).
+🎬 **Setup video (7:46, in Egyptian Arabic)** — it plays right here. For full quality: [watch it in HD](https://abdallah-shehawey.github.io/Gaming-on-Linux/) or [download it](https://github.com/abdallah-shehawey/Gaming-on-Linux/raw/main/How%20to%20Play%20-%20Setup%20Guide.mp4).
 · بالعربي: [README-ar.md](README-ar.md) · [PDF](README-ar.pdf)
 
 This folder lets you play any Windows game on a Linux laptop: the game sits in your Steam

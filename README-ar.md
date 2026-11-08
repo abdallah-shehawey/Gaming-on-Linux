@@ -1,8 +1,8 @@
 # How to Play — العاب Windows على Linux من Steam، بالدراعات
 
-[![شوف الفيديو (7:46)](.github/video.jpg)](https://abdallah-shehawey.github.io/Gaming-on-Linux/)
+https://github.com/user-attachments/assets/43185ac5-bc72-4a81-85fd-e9485138b108
 
-🎬 **الفيديو (7:46، بالعربي):** دوس على الصورة اللي فوق يشتغل على طول، أو [نزّله](https://github.com/abdallah-shehawey/Gaming-on-Linux/raw/main/How%20to%20Play%20-%20Setup%20Guide.mp4).
+🎬 **الفيديو (7:46، بالعربي)** بيشتغل هنا على طول. بجودة أعلى: [شوفه HD](https://abdallah-shehawey.github.io/Gaming-on-Linux/) أو [نزّله](https://github.com/abdallah-shehawey/Gaming-on-Linux/raw/main/How%20to%20Play%20-%20Setup%20Guide.mp4).
 · English: [README.md](README.md)
 
 الفولدر ده بيخليك تلعب أي لعبة Windows على لابتوب عليه Linux: اللعبة بتبقى جوه
