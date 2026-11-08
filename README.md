@@ -1,137 +1,141 @@
-# How to Play — العاب Windows على Linux من Steam، بالدراعات
+# Gaming on Linux
 
-<video src="https://github.com/abdallah-shehawey/how-to-play/raw/main/How%20to%20Play%20-%20Setup%20Guide.mp4" controls width="100%"></video>
+**Play any Windows game on Linux, from your Steam library, with all your controllers.**
 
-🎬 **الفيديو (7:46، بالعربي):** لو مش ظاهر فوق، [افتحه من هنا](How%20to%20Play%20-%20Setup%20Guide.mp4).
+[![Watch the setup video (7:46)](.github/video.jpg)](https://abdallah-shehawey.github.io/Gaming-on-Linux/)
 
-الفولدر ده بيخليك تلعب أي لعبة Windows على لابتوب عليه Linux: اللعبة بتبقى جوه
-الـ Library بتاعة Steam بصورها، بتشتغل بدوسة Play، وكل الدراعات شغالة بنفس
-الزراير ونفس ترتيب اللاعيبة في كل الألعاب، ومعاها تحسين الأداء اللي خلّى الألعاب
-تبطّل تقطّع.
+🎬 **Setup video (7:46, in Egyptian Arabic):** click the picture above and it plays right away,
+or [download it](https://github.com/abdallah-shehawey/Gaming-on-Linux/raw/main/How%20to%20Play%20-%20Setup%20Guide.mp4).
+· بالعربي: [README-ar.md](README-ar.md) · [PDF](README-ar.pdf)
 
-الفيديو اللي فوق بيشرح نفس الكلام خطوة بخطوة (وهو نفسه ملف `How to Play - Setup Guide.mp4`
-اللي جوه الفولدر). الملف ده فيه كل التفاصيل، وهو نفسه `README.pdf` لو عايزه PDF.
+This folder lets you play any Windows game on a Linux laptop: the game sits in your Steam
+**Library** with its artwork and starts with **Play**, every controller works with the same
+buttons and the same player order in every game, and it comes with the performance fix that
+stopped games from stuttering.
 
-> **باختصار:** افتح Terminal جوه الفولدر ده وشغّل بالترتيب:
-> `./1-install-programs.sh` ← `./2-performance-fix.sh` (وبعده Restart) ← `./3-setup.sh`
-> وبعد كده لكل لعبة: `./4-add-game.sh`
+The video walks through all of this step by step (it is also the file
+`How to Play - Setup Guide.mp4` in this folder). This page has every detail.
 
----
-
-## المحتويات
-
-1. [نزّل الفولدر](#نزّل-الفولدر)
-2. [محتاج إيه](#محتاج-إيه)
-3. [ابدأ على نضافة](#ابدأ-على-نضافة)
-4. [إزاي تفتح Terminal في الفولدر](#إزاي-تفتح-terminal-في-الفولدر)
-5. [الخطوة 1: البرامج](#الخطوة-1-البرامج)
-6. [الخطوة 2: تحسين الأداء](#الخطوة-2-تحسين-الأداء)
-7. [الخطوة 3: الإعداد المشترك (مرة واحدة)](#الخطوة-3-الإعداد-المشترك-مرة-واحدة)
-8. [الخطوة 4: إضافة لعبة لـ Steam (لكل لعبة)](#الخطوة-4-إضافة-لعبة-لـ-steam-لكل-لعبة)
-9. [لو اللعبة محتاجة حاجة زيادة](#لو-اللعبة-محتاجة-حاجة-زيادة)
-10. [Controller Settings: الدراعات](#controller-settings-الدراعات)
-11. [وانت بتلعب بيحصل إيه لوحده](#وانت-بتلعب-بيحصل-إيه-لوحده)
-12. [لو حاجة مش شغالة](#لو-حاجة-مش-شغالة)
-13. [كل حاجة جاية منين](#كل-حاجة-جاية-منين)
-14. [فين بيتحط إيه](#فين-بيتحط-إيه)
-15. [إلغاء كل ده](#إلغاء-كل-ده)
+> **Short version:** open a Terminal in this folder and run, in order:
+> `./1-install-programs.sh` → `./2-performance-fix.sh` (then restart) → `./3-setup.sh`
+> Then, for each game: `./4-add-game.sh`
 
 ---
 
-## نزّل الفولدر
+## Contents
 
-1. فوق في الصفحة دي: الزرار الأخضر **Code** ← **Download ZIP**.
-2. افتح Downloads، كليك يمين على الملف ← **Extract Here**. هيطلع فولدر اسمه
-   **how-to-play-main**: ده الفولدر اللي هتشتغل منه.
+1. [Download](#download)
+2. [What you need](#what-you-need)
+3. [Start clean](#start-clean)
+4. [Open a Terminal in the folder](#open-a-terminal-in-the-folder)
+5. [Step 1: Programs](#step-1-programs)
+6. [Step 2: Performance fix](#step-2-performance-fix)
+7. [Step 3: Shared setup (once)](#step-3-shared-setup-once)
+8. [Step 4: Add a game to Steam (per game)](#step-4-add-a-game-to-steam-per-game)
+9. [If a game needs something extra](#if-a-game-needs-something-extra)
+10. [Controller Settings](#controller-settings)
+11. [What happens on its own while you play](#what-happens-on-its-own-while-you-play)
+12. [If something doesn't work](#if-something-doesnt-work)
+13. [Where everything comes from](#where-everything-comes-from)
+14. [Where things go](#where-things-go)
+15. [Remove it all](#remove-it-all)
 
-أو لو عندك git:
+---
+
+## Download
+
+1. At the top of this page: the green **Code** button → **Download ZIP**.
+2. Open Downloads, right-click the file → **Extract Here**. You get a folder called
+   **Gaming-on-Linux-main**: that is the folder you work from.
+
+Or, if you have git:
 ```
-git clone https://github.com/abdallah-shehawey/how-to-play.git
+git clone https://github.com/abdallah-shehawey/Gaming-on-Linux.git
 ```
 
-> لو سكربت قالك `Permission denied`: افتح Terminal في الفولدر واكتب `chmod +x *.sh`
-> ودوس Enter، وبعدين جرّب تاني.
+> If a script says `Permission denied`: open a Terminal in the folder, type `chmod +x *.sh`,
+> press Enter, and try again.
 
-## محتاج إيه
+## What you need
 
-- لابتوب أو جهاز عليه **Linux**، من النوع ده أو ده أو ده:
-  - **نوع RPM:** ‏Fedora (أو Nobara) — ده اللي اتجرب عليه كل حاجة.
-  - **نوع Debian:** ‏Ubuntu 24.04 أو أحدث، Linux Mint 22 أو أحدث، Debian 13، Pop!_OS، Zorin.
-  - **نوع Arch:** ‏Arch، EndeavourOS، Manjaro، CachyOS.
-- **نت**، عشان البرامج بتنزل منه.
-- **الألعاب**: فولدر كل لعبة (اللي فيه الـ ‎.exe بتاعها)، أو الـ setup.exe بتاعها.
-- **الدراعات**: أي دراع USB أو Bluetooth (بلايستيشن، Xbox، أو الدراعات الصيني بأنواعها).
-- مساحة: حوالي 3 جيجا للبرامج، غير مساحة الألعاب نفسها.
+- A laptop or PC running **Linux**, any of these families:
+  - **RPM-based:** Fedora (or Nobara). Everything here was tested on Fedora.
+  - **Debian-based:** Ubuntu 24.04 or newer, Linux Mint 22 or newer, Debian 13, Pop!_OS, Zorin.
+  - **Arch-based:** Arch, EndeavourOS, Manjaro, CachyOS.
+- **Internet**, since the programs are downloaded.
+- **The games:** each game's folder (the one with its `.exe`), or its `setup.exe`.
+- **Controllers:** any USB or Bluetooth pad (PlayStation, Xbox, or the generic Chinese ones).
+- Disk space: about 3 GB for the programs, plus the games themselves.
 
-## ابدأ على نضافة
+## Start clean
 
-لو دي **أول مرة** تعمل الكلام ده على الجهاز، عدّي الجزء ده.
+If this is the **first time** you do this on the computer, skip this part.
 
-لو كنت جربت قبل كده تشغّل ألعاب Windows بأي طريقة، نضّف الأول عشان مفيش حاجة
-قديمة تلخبط الجديدة:
+If you have tried running Windows games before in any way, clean up first so nothing old gets
+in the way of the new setup:
 
-1. **الفولدرات المخفية:** افتح **Files**، ادخل الـ Home، ودوس **Ctrl + H** عشان
-   الفولدرات المخفية (اللي اسمها بيبدأ بنقطة) تظهر.
-   - لو فيه **‎.wine-games** ← كليك يمين ← **Move to Trash**.
-   - لو فيه **‎.wine** ومش مستخدمه لأي برنامج Windows تاني ← برضو Move to Trash.
-   - دوس **Ctrl + H** تاني عشان يستخبوا.
-2. **Steam:** لو فيه نسخ قديمة من الألعاب اتضافت بإيدك قبل كده: كليك يمين على اللعبة ←
-   **Manage** ← **Remove non-Steam game from your library**.
-3. **برامج تانية:** لو كنت مسطّب الألعاب في Lutris أو Bottles أو Heroic، امسح
-   اللعبة من جوه البرنامج ده الأول.
-4. فضّي الـ **Trash** في الآخر لو عايز المساحة.
+1. **Hidden folders:** open **Files**, go to Home, and press **Ctrl + H** to show hidden
+   folders (names starting with a dot).
+   - If there is a **.wine-games** folder → right-click → **Move to Trash**.
+   - If there is a **.wine** folder and you don't use it for any other Windows program → Move to Trash too.
+   - Press **Ctrl + H** again to hide them.
+2. **Steam:** if you added old copies of the games by hand before: right-click the game →
+   **Manage** → **Remove non-Steam game from your library**.
+3. **Other launchers:** if the games are installed in Lutris, Bottles or Heroic, remove them
+   from inside that program first.
+4. Empty the **Trash** at the end if you want the space back.
 
-> السكربت التالت كمان بيسألك لوحده لو لقى ‎.wine-games قديم: «Start clean؟» — قول Y.
+> The third script also asks on its own if it finds an old `.wine-games`: "Start clean?" — answer Y.
 
-## إزاي تفتح Terminal في الفولدر
+## Open a Terminal in the folder
 
-1. حط الفولدر ده (**how to play**، أو **how-to-play-main** لو نزلته من GitHub) في أي
-   حتة على اللابتوب (مثلاً Downloads).
-2. ادخل جوه الفولدر في Files.
-3. كليك يمين في مكان فاضي ← **Open in Terminal**.
-4. اكتب اسم السكربت وقبله ‎`./`‎ ودوس Enter، مثلاً:
+1. Put this folder (**Gaming-on-Linux-main** if you downloaded it from GitHub) anywhere on
+   the laptop, for example in Downloads.
+2. Open the folder in Files.
+3. Right-click an empty spot → **Open in Terminal**.
+4. Type the script name with `./` in front and press Enter, for example:
    ```
    ./1-install-programs.sh
    ```
-5. لما يطلب **password**: اكتب باسورد الجهاز ودوس Enter. **مش هيظهر حاجة وانت بتكتب**،
-   ده طبيعي.
+5. When it asks for a **password**: type the computer's password and press Enter.
+   **Nothing shows while you type** — that is normal.
 
-> **نصيحة:** مش لازم تكتب اسم السكربت كله. اكتب `./1` ودوس **Tab**، هيكمّله لوحده
-> لـ `./1-install-programs.sh`، وبعدين Enter. ونفس الحكاية مع `./2` و `./3` و `./4`.
+> **Tip:** you don't have to type the whole name. Type `./1` and press **Tab**, and it
+> completes to `./1-install-programs.sh` by itself; then press Enter. Same with `./2`, `./3` and `./4`.
 
-لو كليك يمين مفيهوش Open in Terminal: افتح Terminal من قايمة البرامج واكتب
-`cd ` (بمسافة بعدها)، واسحب الفولدر جوه الـ Terminal، ودوس Enter.
+If the right-click menu has no Open in Terminal: open Terminal from the app menu, type `cd `
+(with a space after it), drag the folder into the Terminal window, and press Enter.
 
-## الخطوة 1: البرامج
+## Step 1: Programs
 
 ```
 ./1-install-programs.sh
 ```
 
-بيعرف لوحده انت على أنهي نوع Linux، وبينزّل:
+It detects which Linux family you are on and installs:
 
-| البرنامج | بيعمل إيه |
+| Program | What it does |
 |---|---|
-| **Steam** | المكان اللي هتفتح منه كل الألعاب |
-| **Wine** | بيشغّل برامج وألعاب Windows على Linux |
-| **winetricks** | بينزّل حاجات Windows اللي بعض الألعاب بتطلبها (من Microsoft نفسها) |
-| **GameMode** | بيسرّع الجهاز وقت اللعب بس (الخطوة 2) |
-| **GTK 4 / libadwaita / SDL3** | اللي برنامج Controller Settings مرسوم بيه وبيقرا الدراعات |
-| **تعريف NVIDIA** | لو عندك كارت NVIDIA ومفيش تعريف — هيسألك الأول |
+| **Steam** | Where you start every game from |
+| **Wine** | Runs Windows programs and games on Linux |
+| **winetricks** | Downloads the Windows parts some games ask for (from Microsoft itself) |
+| **GameMode** | Speeds the computer up only while you play (step 2) |
+| **GTK 4 / libadwaita / SDL3** | What the Controller Settings app is drawn with and reads the pads through |
+| **NVIDIA driver** | If you have an NVIDIA card and no driver yet — it asks first |
 
-### لو عايز تعملها بإيدك
+### Doing it by hand
 
-**Fedora (نوع RPM):**
-1. افتح **Software** ← القايمة (⋮) ← **Software Repositories** ← شغّل
-   **Enable Third-Party Repositories** (أو **RPM Fusion**).
-2. دوّر على **Steam** في Software ودوس Install.
-3. والباقي في Terminal:
+**Fedora (RPM-based):**
+1. Open **Software** → the menu (⋮) → **Software Repositories** → turn on
+   **Enable Third-Party Repositories** (or **RPM Fusion**).
+2. Search for **Steam** in Software and click Install.
+3. The rest in a Terminal:
    ```
    sudo dnf install wine winetricks gamemode gamemode.i686 python3-gobject python3-cairo gtk4 libadwaita SDL3 zstd
    ```
-   ولو عندك NVIDIA: `sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda` واستنى 5 دقايق قبل الـ Restart.
+   With NVIDIA: `sudo dnf install akmod-nvidia xorg-x11-drv-nvidia-cuda`, then wait 5 minutes before restarting.
 
-**Ubuntu / Mint / Debian (نوع Debian):**
+**Ubuntu / Mint / Debian (Debian-based):**
 ```
 sudo dpkg --add-architecture i386
 sudo apt update
@@ -139,247 +143,252 @@ sudo apt install wget gpg
 sudo mkdir -pm755 /etc/apt/keyrings
 wget -O - https://dl.winehq.org/wine-builds/winehq.key | sudo gpg --dearmor -o /etc/apt/keyrings/winehq-archive.key -
 ```
-بعدها (غيّر `noble` لاسم نسختك: ‏Ubuntu 24.04 = noble، ‏Mint 22 = noble، ‏Debian 13 = trixie واستخدم `debian` بدل `ubuntu`):
+Then (change `noble` to your release's name: Ubuntu 24.04 = noble, Mint 22 = noble,
+Debian 13 = trixie, and use `debian` instead of `ubuntu`):
 ```
 sudo wget -NP /etc/apt/sources.list.d/ https://dl.winehq.org/wine-builds/ubuntu/dists/noble/winehq-noble.sources
 sudo apt update
 sudo apt install --install-recommends winehq-staging
 sudo apt install winetricks gamemode python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-adw-1 zstd mesa-vulkan-drivers mesa-vulkan-drivers:i386
 ```
-وSteam: نزّل **steam.deb** من [store.steampowered.com/about](https://store.steampowered.com/about/)
-ودوس عليه مرتين (أو `sudo apt install ./steam.deb`).
-ولو عندك NVIDIA على Ubuntu أو Mint: `sudo ubuntu-drivers install` (أو برنامج **Driver Manager** في Mint).
+For Steam: download **steam.deb** from [store.steampowered.com/about](https://store.steampowered.com/about/)
+and double-click it (or `sudo apt install ./steam.deb`).
+With NVIDIA on Ubuntu or Mint: `sudo ubuntu-drivers install` (or the **Driver Manager** app on Mint).
 
 **Arch / EndeavourOS / Manjaro:**
-1. شغّل **multilib**: افتح `/etc/pacman.conf` وشيل علامة `#` من قدام السطرين
-   `[multilib]` و `Include = /etc/pacman.d/mirrorlist` اللي تحته.
-2. نزّل البرامج:
+1. Turn on **multilib**: open `/etc/pacman.conf` and remove the `#` in front of the two lines
+   `[multilib]` and the `Include = /etc/pacman.d/mirrorlist` under it.
+2. Install the programs:
    ```
    sudo pacman -Syu steam wine winetricks gamemode lib32-gamemode python-gobject python-cairo gtk4 libadwaita sdl3 zstd
    ```
-   ولما Steam يسألك على الـ Vulkan driver: اختار `lib32-vulkan-intel` (Intel) أو
-   `lib32-vulkan-radeon` (AMD) أو `lib32-nvidia-utils` (NVIDIA).
+   When Steam asks for a Vulkan driver, pick `lib32-vulkan-intel` (Intel),
+   `lib32-vulkan-radeon` (AMD) or `lib32-nvidia-utils` (NVIDIA).
 
-## الخطوة 2: تحسين الأداء
+## Step 2: Performance fix
 
 ```
 ./2-performance-fix.sh
 ```
 
-وبعدها **اعمل Restart للجهاز مرة واحدة.**
+Then **restart the computer once.**
 
-**ليه؟** الألعاب كانت بتقطّع (PES 2021 مثلاً) لأن الـ Linux kernel بيبطّأ أي برنامج
-بيعمل حاجة اسمها **split lock**، وألعاب كتير بتعملها طول الوقت. **GameMode** بيقفل
-التبطيء ده وقت اللعب بس، ويرجّعه أول ما تقفل اللعبة، وكمان بيخلي البروسيسور على
-أعلى سرعة وقت اللعب — **بشرط** إنك تكون في جروب اسمه `gamemode`.
+**Why?** Games were stuttering (PES 2021, for example) because the Linux kernel slows down any
+program that does something called a **split lock**, and many games do it all the time.
+**GameMode** turns that slowdown off only while you play and brings it back as soon as the game
+closes, and it also runs the CPU at full speed while you play — **as long as** you are in a
+group called `gamemode`.
 
-السكربت بيعمل كده بالأمر ده (ممكن تكتبه بإيدك بدل السكربت):
+The script does that with this command (you can type it yourself instead):
 ```
 sudo usermod -aG gamemode $USER
 ```
-وبيحط ملف صغير `~/.config/gamemode.ini` بيرجّع البروسيسور لسرعته العادية بعد اللعب.
+It also adds a small `~/.config/gamemode.ini` that puts the CPU back to its normal speed after playing.
 
-**تتأكد إزاي:** وانت بتلعب، افتح Terminal واكتب:
+**How to check:** while a game is running, open a Terminal and type:
 ```
 cat /proc/sys/kernel/split_lock_mitigate
 ```
-- **0** = التحسين شغال.
-- **1** = لما مفيش لعبة شغالة ده طبيعي. لو طلع 1 **وانت بتلعب**، يبقى لسه مأعملتش Restart.
+- **0** = the fix is working.
+- **1** = normal when no game is running. If it says 1 **while you play**, you haven't restarted yet.
 
-## الخطوة 3: الإعداد المشترك (مرة واحدة)
+## Step 3: Shared setup (once)
 
 ```
 ./3-setup.sh
 ```
 
-ده بيعمل الحاجات اللي كل الألعاب بتستخدمها، مرة واحدة بس:
+This sets up the things every game uses, just once:
 
-- فولدر **Games** في الـ Home (‏`~/Games`): هنا تحط فولدر كل لعبة.
-- فولدر **Games/common**: ملفات التشغيل. **متلمسهاش**.
-- **Wine واحد لكل الألعاب** (‏`~/.wine-games`)، وجواه **DXVK**: ده بيحوّل الـ DirectX
-  بتاع اللعبة لـ Vulkan، وبيفرق جامد في السرعة.
-- **الدراعات**: نفس الزراير ونفس ترتيب اللاعيبة لكل الألعاب.
-- برنامج **Controller Settings** بيتحط في Steam.
+- A **Games** folder in your Home (`~/Games`): put each game's folder here.
+- A **Games/common** folder: the launch files. **Don't touch it.**
+- **One Wine for all games** (`~/.wine-games`), with **DXVK** inside: it turns the game's
+  DirectX into Vulkan, which makes a big difference in speed.
+- **Controllers:** the same buttons and the same player order for every game.
+- The **Controller Settings** app is added to Steam.
 
-لو دي أول مرة تفتح Steam على الجهاز، السكربت هيفتحهولك: اعمل **Sign in** (أو اعمل
-حساب ببلاش)، استنى لحد ما يفتح خالص، واقفله من **Steam ← Exit**. السكربت بيكمّل لوحده.
+If this is the first time Steam opens on this computer, the script opens it for you:
+**Sign in** (or make a free account), wait until it has fully opened, then close it from
+**Steam → Exit**. The script carries on by itself.
 
-## الخطوة 4: إضافة لعبة لـ Steam (لكل لعبة)
+## Step 4: Add a game to Steam (per game)
 
-### 1) حط اللعبة في مكانها
+### 1) Put the game in place
 
-- لو اللعبة **فولدر جاهز** (فيه الـ ‎.exe): انسخ الفولدر كله جوه `~/Games`.
-  خليه على هارد اللابتوب نفسه، مش فلاشة أو هارد خارجي.
-- لو اللعبة **setup.exe**: شغّل `./fix-game.sh` واختار **6**، وسطّبها عادي.
-  هتلاقيها بعدها في `~/.wine-games/drive_c/Program Files (x86)/...`.
+- If the game is a **ready folder** (it has the `.exe`): copy the whole folder into `~/Games`.
+  Keep it on the laptop's own drive, not a USB stick or external drive.
+- If the game is a **setup.exe**: run `./fix-game.sh`, choose **6**, and install it as usual.
+  You will find it afterwards in `~/.wine-games/drive_c/Program Files (x86)/...`.
 
-### 2) ضيفها بالسكربت
+### 2) Add it with the script
 
 ```
 ./4-add-game.sh
 ```
-- هيقولك: اسحب الـ **‎.exe بتاع اللعبة** جوه الـ Terminal ودوس Enter.
-  (افتح فولدر اللعبة في Files واسحب الملف بالماوس على الـ Terminal.)
-- اكتب اسمها زي ما عايزه يظهر في Steam (أو Enter ياخد اسم الفولدر).
-- **الصور (اختياري):** اسحب كل صورة ودوس Enter، أو Enter على طول عشان تعديها:
-  - **cover**: الصورة الطويلة اللي في الـ Library (‏600×900)
-  - **hero**: البانر العريض فوق صفحة اللعبة (‏1920×620)
-  - **logo**: اسم اللعبة بخلفية شفافة، بيتحط فوق البانر
-  - **icon**: الأيقونة المربعة الصغيرة
+- It asks you to drag the **game's `.exe`** into the Terminal and press Enter.
+  (Open the game's folder in Files and drag the file onto the Terminal with the mouse.)
+- Type its name the way you want it to show in Steam (or press Enter to use the folder's name).
+- **Pictures (optional):** drag each picture in and press Enter, or just press Enter to skip it:
+  - **cover**: the tall picture in the Library (600×900)
+  - **hero**: the wide banner at the top of the game's page (1920×620)
+  - **logo**: the game's name on a transparent background, placed over the banner
+  - **icon**: the small square icon
 
-  **الصور منين؟** من [steamgriddb.com](https://www.steamgriddb.com): دوّر على اسم
-  اللعبة، وهتلاقي Grids (الـ cover)، ‏Heroes، ‏Logos، ‏Icons. نزّل اللي يعجبك.
+  **Where do the pictures come from?** [steamgriddb.com](https://www.steamgriddb.com): search for
+  the game's name and you will find Grids (the cover), Heroes, Logos and Icons. Download the ones you like.
 
-Steam لازم يكون مقفول؛ لو مفتوح السكربت هيسألك يقفله.
+Steam has to be closed; if it is open, the script asks to close it.
 
-**مثال: PES 2021.** فولدرها `~/Games/eFootball-PES-2021`، والـ exe هو `PES2021.exe`،
-والاسم «eFootball PES 2021»، والصور من SteamGridDB. واتضاف لها `game-options.sh`
-فيه `GAME_60HZ=1` لأنها مقفولة على 60 فريم (تحت في «لو اللعبة محتاجة حاجة زيادة»).
+**Example: PES 2021.** Its folder is `~/Games/eFootball-PES-2021`, the exe is `PES2021.exe`,
+the name is "eFootball PES 2021", and the pictures came from SteamGridDB. It also got a
+`game-options.sh` with `GAME_60HZ=1`, because the game is locked to 60 fps (see
+[If a game needs something extra](#if-a-game-needs-something-extra)).
 
-### أو ضيفها بإيدك من جوه Steam
+### Or add it by hand inside Steam
 
-1. **Games** (فوق) ← **Add a Non-Steam Game to My Library** ← **Browse**.
-2. روح لـ `Games/common` واختار **steam-launch.sh** ← **Add Selected Programs**.
-   (لو مش ظاهر، غيّر نوع الملفات تحت لـ All Files.)
-3. كليك يمين على اللعبة الجديدة ← **Properties**:
-   - **الاسم**: اكتب اسم اللعبة بدل steam-launch.sh.
-   - **Launch Options**: اكتب مكان play.sh، وبعده مكان الـ exe، كل واحد بين علامتين " ":
+1. **Games** (top menu) → **Add a Non-Steam Game to My Library** → **Browse**.
+2. Go to `Games/common`, pick **steam-launch.sh** → **Add Selected Programs**.
+   (If it doesn't show, set the file type at the bottom to All Files.)
+3. Right-click the new game → **Properties**:
+   - **Name**: type the game's name instead of steam-launch.sh.
+   - **Launch Options**: the path of play.sh, then the path of the exe, each in quotes:
      ```
-     "/home/اسمك/Games/common/play.sh" "/home/اسمك/Games/اللعبة/Game.exe"
+     "/home/YOUR-NAME/Games/common/play.sh" "/home/YOUR-NAME/Games/THE-GAME/Game.exe"
      ```
-   - **الأيقونة**: دوس على المربع الفاضي جنب الاسم واختار صورة.
-   - **In-Game**: اقفل **Enable the Steam Overlay while in-game**.
-4. نفس الـ Properties ← **Controller** ← **Disable Steam Input**.
-   (مهم: الدراعات بتتظبط من Controller Settings، وSteam Input بيلخبطها.)
-5. **الصور**: كليك يمين على اللعبة ← **Manage** ← **Set custom artwork** (الـ cover).
-   وفي صفحة اللعبة: كليك يمين على البانر ← **Set Custom Background** (الـ hero)،
-   وكليك يمين تاني ← **Set Custom Logo**.
+   - **Icon**: click the empty square next to the name and choose a picture.
+   - **In-Game**: turn off **Enable the Steam Overlay while in-game**.
+4. Same Properties → **Controller** → **Disable Steam Input**.
+   (Important: the pads are set up in Controller Settings, and Steam Input mixes them up.)
+5. **Pictures:** right-click the game → **Manage** → **Set custom artwork** (the cover).
+   On the game's page: right-click the banner → **Set Custom Background** (the hero),
+   and right-click again → **Set Custom Logo**.
 
-## لو اللعبة محتاجة حاجة زيادة
+## If a game needs something extra
 
-أغلب الألعاب مش محتاجة حاجة. لو لعبة **مش بتفتح**، أو **بتقفل لوحدها**، أو بتقول
-**‎.dll is missing**، شغّل:
+Most games don't need anything. If a game **won't start**, **closes by itself**, or says
+**.dll is missing**, run:
 ```
 ./fix-game.sh
 ```
-واختار اللي يناسب. كل حاجة بتتسطب مرة واحدة وبتخدم كل الألعاب بعد كده:
+and pick what fits. Each item is installed once and then serves every game:
 
-| اللعبة بتعمل إيه | الرقم | اللي بيتسطب | جاي منين |
+| What the game does | Number | What gets installed | From |
 |---|---|---|---|
-| بتقفل على طول، أو MSVCP140 / VCRUNTIME140 missing | 1 | Visual C++ 2015-2022 | Microsoft (winetricks) |
-| لعبة قديمة: MSVCR100 / MSVCR120 / MSVCP90 missing | 2 | Visual C++ 2008/2010/2013 | Microsoft (winetricks) |
+| Closes right away, or MSVCP140 / VCRUNTIME140 missing | 1 | Visual C++ 2015-2022 | Microsoft (winetricks) |
+| Older game: MSVCR100 / MSVCR120 / MSVCP90 missing | 2 | Visual C++ 2008/2010/2013 | Microsoft (winetricks) |
 | d3dx9_43 / d3dcompiler_47 missing | 3 | DirectX extras | Microsoft (winetricks) |
-| لعبة قديمة فيها فيزيا، بتطلب PhysX | 4 | NVIDIA PhysX | NVIDIA (winetricks) |
-| لانشر بيطلب .NET Framework | 5 | .NET 4.8 | Microsoft (winetricks) |
-| اللعبة setup.exe | 6 | بيشغّل الـ installer جوه Wine بتاع الألعاب | — |
-| بتقع جوه DLL من Wine نفسه | 7 | يخلي اللعبة دي بس تستخدم نسخة Microsoft | — |
-| عايز تجرب الدراعات جوه Wine | 8 | شاشة Game Controllers بتاعة Windows | — |
+| Older game with physics that asks for PhysX | 4 | NVIDIA PhysX | NVIDIA (winetricks) |
+| A launcher that asks for .NET Framework | 5 | .NET 4.8 | Microsoft (winetricks) |
+| The game is a setup.exe | 6 | Runs the installer inside the games' Wine | — |
+| Crashes inside one of Wine's own DLLs | 7 | Makes just that game use Microsoft's copy | — |
+| You want to test the pads inside Wine | 8 | Windows' Game Controllers window | — |
 
-### إعدادات للعبة واحدة بس: game-options.sh
+### Settings for one game only: game-options.sh
 
-لو لعبة محتاجة إعداد خاص بيها هي بس: انسخ `~/Games/common/game-options-example.sh`
-جنب الـ ‎.exe بتاع اللعبة، وسمّيه **game-options.sh**، وشيل علامة `#` من قدام السطر اللي
-محتاجه:
+If a game needs a setting of its own: copy `~/Games/common/game-options-example.sh` next to
+the game's `.exe`, name it **game-options.sh**, and remove the `#` in front of the line you need:
 
-| السطر | بيعمل إيه |
+| Line | What it does |
 |---|---|
-| `GAME_60HZ=1` | الشاشة تبقى 60 هيرتز وقت اللعبة دي — للألعاب المقفولة على 60 فريم (زي PES)، عشان الحركة متقطعش على شاشة 144 أو 165 |
-| `export DXVK_HUD=fps` | عداد الفريمات في الركن |
-| `export WINEDLLOVERRIDES="d3d9=n,b"` | لو اللعبة جايبة DLL معاها في فولدرها ولازم تستخدمه |
-| `GAME_ARGS="-windowed"` | كلام زيادة اللعبة محتاجاه وهي بتفتح |
+| `GAME_60HZ=1` | Switches the screen to 60 Hz while this game runs — for games locked to 60 fps (like PES), so motion doesn't stutter on a 144 or 165 Hz screen |
+| `export DXVK_HUD=fps` | An FPS counter in the corner |
+| `export WINEDLLOVERRIDES="d3d9=n,b"` | If the game ships its own DLL in its folder and has to use it |
+| `GAME_ARGS="-windowed"` | Extra arguments the game needs when it starts |
 
-### حاجات تانية بتحصل
+### Other things that happen
 
-- **الـ Settings / Launcher بتاع اللعبة مش بيفتح أو فاضي** (زي Settings.exe بتاع PES):
-  ظبط الشاشة والجرافيكس من **جوه اللعبة نفسها**.
-- **اللعبة عندها launcher بيفتح اللعبة الحقيقية ويقفل:** عادي، ‎play.sh بيستنى اللعبة
-  الحقيقية.
-- **اللعبة بتظهر أزرار Xbox:** طبيعي. ‏A = إكس ✕، ‏B = دايرة ○، ‏X = مربع □، ‏Y = مثلث △.
-- **لعبة Online / Anti-cheat:** ألعاب كتير عليها anti-cheat مش بتشتغل على Linux خالص.
+- **The game's Settings / Launcher won't open or is empty** (like PES's Settings.exe):
+  set the screen and graphics from **inside the game itself**.
+- **The game has a launcher that starts the real game and closes:** that's fine, play.sh waits
+  for the real game.
+- **The game shows Xbox buttons:** normal. A = cross ✕, B = circle ○, X = square □, Y = triangle △.
+- **Online / anti-cheat games:** many games with anti-cheat don't run on Linux at all.
 
-## Controller Settings: الدراعات
+## Controller Settings
 
-افتحه من Steam زي أي لعبة. **الإعداد هنا بيتسمع في كل الألعاب** اللي بتشتغل بالطريقة
-دي، فبتظبطه مرة واحدة.
+Open it from Steam like any game. **What you set here applies to every game** that runs this
+way, so you set it up once.
 
-- **فوق — PLAYERS:** اللاعيبة بالترتيب. **اسحب** أي دراع مكان التاني عشان تغيّر مين
-  Player 1 ومين Player 2 (أو Alt + السهم). **Default Order** = ترتيب التركيب.
-- **في النص:** صورة الدراع. **على الجنبين:** كل زرار وخانته.
-- **تغيّر زرار:** دوس على خانته، وبعدين دوس الزرار اللي عايزه على الدراع.
-  الرموز زي البلايستيشن: △ ○ ✕ □.
-- **Revert** تحت الصورة: يرجّع زراير الدراع ده للأصل.
-- **Apply** يحفظ، **OK** يحفظ ويقفل.
+- **Top — PLAYERS:** the players in order. **Drag** any pad onto another's place to change who
+  is Player 1 and who is Player 2 (or Alt + arrow keys). **Default Order** = the order they were plugged in.
+- **Middle:** a picture of the pad. **Both sides:** every button and its box.
+- **Change a button:** click its box, then press the button you want on the pad.
+  The symbols are PlayStation's: △ ○ ✕ □.
+- **Revert** under the picture: puts this pad's buttons back to the default.
+- **Apply** saves, **OK** saves and closes.
 
-كل نوع دراع ليه ماب خاص بيه، والماب بيفضل محفوظ لو شلت الدراع وركبته، أو غيّرت
-البورت، أو عملت Restart. وفيه ماب جاهز لدراعات **Twin USB** (أداپتر دراعين PS2 الصيني).
+Each pad model has its own map, and the map stays saved if you unplug the pad and plug it back,
+change the port, or restart. There is a ready map for **Twin USB** pads (the cheap two-player
+PS2 pad adapter).
 
-## وانت بتلعب بيحصل إيه لوحده
+## What happens on its own while you play
 
-- الجهاز بيدخل وضع **Performance**.
-- **GameMode** شغال: البروسيسور على أعلى سرعة، والـ split lock مقفول.
-- في بروسيسورات Intel الجيل 12 وأحدث: اللعبة بتشتغل على **الأنوية السريعة** بس.
-- لو عندك كارت **NVIDIA**: اللعبة بتشتغل عليه.
-- لو اللعبة فيها `GAME_60HZ=1`: الشاشة بتتحول **60 هيرتز**.
-- لما تقفل اللعبة، **كل حاجة بترجع زي ما كانت**.
+- The computer switches to the **Performance** power mode.
+- **GameMode** is on: the CPU runs at full speed and split lock slowdown is off.
+- On Intel 12th gen and newer: the game runs on the **fast cores** only.
+- If you have an **NVIDIA** card: the game runs on it.
+- If the game has `GAME_60HZ=1`: the screen switches to **60 Hz**.
+- When you close the game, **everything goes back to how it was**.
 
-## لو حاجة مش شغالة
+## If something doesn't work
 
-1. شغّل:
+1. Run:
    ```
    ./check.sh
    ```
-   بيقولك إيه جاهز (✓) وإيه ناقص (✗). ابعت صورة منه للي بعتلك الفولدر ده.
-2. **الـ log بتاع كل لعبة:** `~/.cache/wine-games/<اسم الـ exe>.log` (فولدر مخفي:
-   Ctrl + H في Files).
-3. **دراع مش ظاهر:** شيله وركّبه، وافتح Controller Settings. لو لسه، جرّب بورت تاني.
-4. **أي تعديل في ملفات Steam بالسكربتات لازم وSteam مقفول** (Steam ← Exit، مش X بس).
-5. **اللعبة بطيئة:** اتأكد إن الخطوة 2 شغالة (`check.sh`)، وإنك عملت Restart، وإن
-   اللابتوب على الشاحن.
-6. **اللعبة بتقفل على طول:** `./fix-game.sh` ← 1 (Visual C++)، وبعدين 3 (DirectX).
+   It shows what is ready (✓) and what is missing (✗). Send a screenshot of it to whoever sent you this.
+2. **Each game's log:** `~/.cache/wine-games/<exe name>.log` (hidden folder: Ctrl + H in Files).
+3. **A pad doesn't show up:** unplug it, plug it back in, and open Controller Settings.
+   If it still doesn't, try another port.
+4. **Any script that edits Steam's files needs Steam closed** (Steam → Exit, not just the X).
+5. **The game is slow:** make sure step 2 is working (`check.sh`), that you restarted, and that
+   the laptop is plugged in.
+6. **The game closes right away:** `./fix-game.sh` → 1 (Visual C++), then 3 (DirectX).
 
-## كل حاجة جاية منين
+## Where everything comes from
 
-| الحاجة | منين | ببلاش؟ |
+| Thing | From | Free? |
 |---|---|---|
-| Steam | Fedora: ‏RPM Fusion · ‏Debian/Ubuntu: ‏steam.deb من Valve · ‏Arch: ‏multilib | آه |
-| Wine | Fedora/Arch: من النظام · ‏Debian/Ubuntu: ‏WineHQ (‏dl.winehq.org) | آه |
-| DXVK (جوه `files/dxvk`) | من **Proton Experimental** اللي جوه Steam (‏Library ← Tools)، رخصة zlib | آه |
-| Visual C++، ‏DirectX، ‏.NET، ‏PhysX | **winetricks** بينزّلهم من Microsoft و NVIDIA | آه |
-| تعريف NVIDIA | RPM Fusion / Ubuntu drivers / Arch | آه |
-| صور الألعاب | [steamgriddb.com](https://www.steamgriddb.com) | آه |
-| Controller Settings والسكربتات | معمولين مخصوص (جوه `files`) | — |
+| Steam | Fedora: RPM Fusion · Debian/Ubuntu: steam.deb from Valve · Arch: multilib | Yes |
+| Wine | Fedora/Arch: the system's own · Debian/Ubuntu: WineHQ (dl.winehq.org) | Yes |
+| DXVK (in `files/dxvk`) | From **Proton Experimental** inside Steam (Library → Tools), zlib licence | Yes |
+| Visual C++, DirectX, .NET, PhysX | **winetricks** downloads them from Microsoft and NVIDIA | Yes |
+| NVIDIA driver | RPM Fusion / Ubuntu drivers / Arch | Yes |
+| Game pictures | [steamgriddb.com](https://www.steamgriddb.com) | Yes |
+| Controller Settings and the scripts | Made for this (in `files`) | — |
 
-## فين بيتحط إيه
+## Where things go
 
-| المكان | فيه إيه |
+| Place | What's in it |
 |---|---|
-| `~/Games/` | فولدرات الألعاب |
-| `~/Games/common/` | ملفات التشغيل (‏play.sh، ‏steam-launch.sh، ‏Controller Settings) |
-| `~/.wine-games/` | Wine بتاع كل الألعاب (Windows الصغير بتاعها) |
-| `~/.config/game-pads/` | ماب الدراعات وترتيب اللاعيبة |
-| `~/.config/environment.d/60-game-pads.conf` | بيخلي كل برنامج (وSteam نفسه) يشوف نفس الماب |
-| `~/.config/gamemode.ini` | إعداد GameMode |
-| `~/.cache/wine-games/` | الـ logs |
+| `~/Games/` | The game folders |
+| `~/Games/common/` | The launch files (play.sh, steam-launch.sh, Controller Settings) |
+| `~/.wine-games/` | The Wine all the games share (their little Windows) |
+| `~/.config/game-pads/` | Pad maps and player order |
+| `~/.config/environment.d/60-game-pads.conf` | Makes every program (Steam included) see the same maps |
+| `~/.config/gamemode.ini` | GameMode settings |
+| `~/.cache/wine-games/` | The logs |
 
-**الفولدر ده (how to play / how-to-play-main):**
+**This folder:**
 
-| الملف | بيعمل إيه |
+| File | What it does |
 |---|---|
-| `1-install-programs.sh` | الخطوة 1: البرامج |
-| `2-performance-fix.sh` | الخطوة 2: تحسين الأداء |
-| `3-setup.sh` | الخطوة 3: الإعداد المشترك |
-| `4-add-game.sh` | الخطوة 4: إضافة لعبة (لكل لعبة) |
-| `fix-game.sh` | لو لعبة محتاجة حاجة زيادة |
-| `check.sh` | يوريك إيه جاهز وإيه ناقص |
-| `uninstall.sh` | يشيل الخطوات 3 و 4 |
-| `files/` | اللي السكربتات بتحطه (متغيرش فيه حاجة) |
-| `How to Play - Setup Guide.mp4` | الفيديو |
-| `README.md` / `README.pdf` | الشرح ده |
+| `1-install-programs.sh` | Step 1: programs |
+| `2-performance-fix.sh` | Step 2: performance fix |
+| `3-setup.sh` | Step 3: shared setup |
+| `4-add-game.sh` | Step 4: add a game (per game) |
+| `fix-game.sh` | When a game needs something extra |
+| `check.sh` | Shows what is ready and what is missing |
+| `uninstall.sh` | Undoes steps 3 and 4 |
+| `files/` | What the scripts put in place (don't change anything in it) |
+| `How to Play - Setup Guide.mp4` | The video |
+| `README.md` | This guide |
+| `README-ar.md` / `README-ar.pdf` | The same guide in Arabic |
 
-## إلغاء كل ده
+## Remove it all
 
 ```
 ./uninstall.sh
 ```
-بيشيل الألعاب اللي اتضافت من Steam، وبيرمي `~/.wine-games` في الـ Trash. فولدرات
-الألعاب، والسيفات، والبرامج، وتحسين الأداء بيفضلوا زي ما هما.
+It removes the games it added from Steam and moves `~/.wine-games` to the Trash. The game
+folders, your saves, the programs, and the performance fix stay as they are.
